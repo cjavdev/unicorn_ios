@@ -1,0 +1,51 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Idea</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeForm()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="createIdea()">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Short Description</span>
+          <input type="text">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Long Description</span>
+          <textarea></textarea>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Looking For
+          </div>
+          <select>
+            <option selected>Technical Co-Founder</option>
+            <option>Non-Technical Co-Founder</option>
+          </select>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Offering
+          </div>
+          <select>
+            <option selected>50/50 split</option>
+            <option>30/70 split</option>
+            <option>10%</option>
+            <option>5% - 10%</option>
+            <option>1% - 5%</option>
+            <option><1%</option>
+          </select>
+        </label>
+        <ion-radio ng-model="choice" ng-value="'Public'">Public</ion-radio>
+        <ion-radio ng-model="choice" ng-value="'Private'">Private</ion-radio>
+        <label class="item">
+          <button class="button button-block button-royal" type="submit">
+            Put it out there!
+          </button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

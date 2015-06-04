@@ -55,5 +55,30 @@ angular.module('starter.controllers', [])
 .controller('ProfileCtrl', function($scope, $stateParams, Profile) {
   $scope.profile = Profile.find($stateParams.id);
 })
-.controller('IdeaCtrl', function($scope, $stateParams) {
+.controller('IdeaCtrl', function($scope, $stateParams, $ionicModal) {
+  // Create the login modal that we will use later
+  $ionicModal.fromTemplateUrl('templates/new_idea.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  // Triggered in the login modal to close it
+  $scope.closeForm = function() {
+    $scope.modal.hide();
+  };
+
+  // Open the login modal
+  $scope.newIdea = function() {
+    console.log('newidea');
+    $scope.modal.show();
+  };
+
+  // Perform the login action when the user submits the login form
+  $scope.createIdea = function() {
+    console.log('createing idea');
+    $timeout(function() {
+      $scope.closeForm();
+    }, 1000);
+  };
 });
