@@ -22,4 +22,11 @@ angular.module('starter.services', [])
         };
       }
     };
+  })
+  .factory('Idea', function($http) {
+    return {
+      create: function(attrs) {
+        return $http.post(API_BASE + "/api/v1/ideas", attrs);
+      }
+    };
   });

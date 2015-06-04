@@ -6,6 +6,11 @@
     </div>
   </ion-header-bar>
   <ion-content>
+    <div ng-show="errors" class="row padding">
+      <div class="assertive" ng-repeat="error in errors">
+        {{error}}
+      </div>
+    </div>
     <form ng-submit="createIdea()">
       <div class="list">
         <label class="item item-input item-stacked-label">

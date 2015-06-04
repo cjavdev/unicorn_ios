@@ -4,8 +4,8 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
+window.API_BASE = "http://localhost:3000";
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
-
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -29,16 +29,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     templateUrl: "templates/menu.html",
     controller: 'AppCtrl'
   })
-
-  .state('app.search', {
-    url: "/search",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/search.html"
-      }
-    }
-  })
-
   .state('app.browse', {
       url: "/browse",
       views: {
@@ -66,11 +56,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
     .state('app.single', {
-      url: "/ideas/:id",
+      url: "/my_ideas",
       views: {
         'menuContent': {
-          templateUrl: "templates/idea.html",
-          controller: 'IdeaCtrl'
+          templateUrl: "templates/my_ideas.html",
+          controller: 'MyIdeasCtrl'
         }
       }
     });
