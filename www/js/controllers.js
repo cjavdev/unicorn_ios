@@ -55,13 +55,20 @@ angular.module('starter.controllers', [])
 .controller('ProfileCtrl', function($scope, $stateParams, Profile) {
   $scope.profile = Profile.find($stateParams.id);
 })
-.controller('IdeaCtrl', function($scope, $stateParams, $ionicModal) {
+.controller('IdeaCtrl', function($scope, $stateParams, $ionicModal, $timeout) {
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/new_idea.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
   });
+
+  $scope.ideaFormData = {
+    privacy: 'Public',
+    looking_for: 'Technical Co-Founder',
+    compensation: '50/50 split',
+    current_status: 'Idea'
+  };
 
   // Triggered in the login modal to close it
   $scope.closeForm = function() {
@@ -76,7 +83,7 @@ angular.module('starter.controllers', [])
 
   // Perform the login action when the user submits the login form
   $scope.createIdea = function() {
-    console.log('createing idea');
+    console.log('createing idea', $scope.ideaFormData);
     $timeout(function() {
       $scope.closeForm();
     }, 1000);
