@@ -1,7 +1,50 @@
-<ion-view view-title="Profile">
+<ion-view>
+  <ion-nav-title>
+    <img src="/img/logo.png" class="bar-logo">
+  </ion-nav-title>
   <ion-content>
-    <ion-list>
-      {{profile.first_name}}
-    </ion-list>
+    <div class="row padding">
+      <div class="col col-33">
+        <img class="profile-img" src="{{profile.image_url}}">
+      </div>
+      <div class="col">
+        <h3>{{profile.first_name}} {{profile.last_name}}</h3>
+        <div><strong>{{profile.headline}}</strong></div>
+        <div><p>{{profile.location_name}}</p></div>
+        <div><button class="im-interested-button button button-royal">I'm interested in this Idea</button></div>
+      </div>
+    </div>
+    <div class="row tags">
+      <span class="tag">fashion</span>
+      <span class="tag">e-commerce</span>
+      <span class="tag">marketplace</span>
+    </div>
+    <div class="padding">
+      <div class="row grey-region">
+        <div class="col col-10">
+          <i class="idea-bulb icon ion-lightbulb"></i>
+        </div>
+        <div class="col col-90 padding">
+          Ever wish you had a style-mate and could shop her closet? Now
+          you can. Poshmark connects you to people whose style you
+          adore, allowing you to shop their closets, anytime you’d like. Have
+          items in your closet that you love, but just don’t wear anymore?
+          List it for sale on Poshmark in less than 60 seconds. Sell what you
+          have in your closet so you can shop for what you really love today.
+        </div>
+      </div>
+    </div>
+    <div class="padding">
+      <div class="row grey-region">
+        <div class="col col-50">
+          <i class="idea-looking-for icon ion-eye"></i>
+          <strong>Tech Co-Founder</strong>
+        </div>
+        <div class="col col-50">
+          <i class="idea-compensation icon ion-contrast"></i>
+          <strong>50/50 split</strong>
+        </div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

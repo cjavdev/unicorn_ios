@@ -51,8 +51,8 @@ angular.module('starter.controllers', [])
     { title: 'Cowbell', id: 6 }
   ];
 })
-.controller('ProfileCtrl', function($scope, $stateParams) {
-  console.log('profile controller gettin spun up');
+.controller('ProfileCtrl', function($scope, $stateParams, Profile) {
+  $scope.profile = Profile.find($stateParams.id);
 })
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
