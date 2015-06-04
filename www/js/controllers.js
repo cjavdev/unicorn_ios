@@ -41,18 +41,15 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+.controller('IdeasCtrl', function($scope) {
+  $scope.ideas = [
+    { industry: "e-commerce", title: 'Boosted Board', id: 1, author: 'Tony Hawk', image_url: 'https://ksr-ugc.imgix.net/projects/78787/photo-original.jpg?v=1397771707&w=1536&h=1152&fit=crop&auto=format&q=92&s=87156d418e3f799b26ca21126f88e144' },
+    { industry: "finance", title: 'Stakeboards', id: 2, author: 'Shaun White', image_url: 'http://cdn.phys.org/newman/gfx/news/hires/2013/1-reviewphanto.jpg' },
+    { industry: "fundraising", title: 'Wake Skate', id: 3, author: 'Sheldon Cooper', image_url: 'http://images.the-house.com/byerly-bi-wake-skt-41-10-prod.jpg' },
   ];
 })
 .controller('ProfileCtrl', function($scope, $stateParams, Profile) {
   $scope.profile = Profile.find($stateParams.id);
 })
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('IdeaCtrl', function($scope, $stateParams) {
 });

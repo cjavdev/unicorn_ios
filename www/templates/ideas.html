@@ -1,0 +1,31 @@
+<ion-view>
+  <ion-nav-title>
+    <img src="/img/logo.png" class="bar-logo">
+  </ion-nav-title>
+  <div class="bar bar-subheader">
+    <h2 class="title">Ideas</h2>
+  </div>
+  <ion-content class="has-subheader grey-region">
+    <div class="padding">
+      <div class="row card padding" ng-repeat="idea in ideas" href="#/app/ideas/{{idea.id}}">
+        <div class="padding col col-50">
+          <img class="idea-img" src="{{idea.image_url}}">
+        </div>
+        <div class="col col-50">
+          <h3>{{idea.title}}</h3>
+          <p>by {{idea.author}}</p>
+
+          <div class="row">
+            <div class="col col-25">
+              <i class="icon ion-fireball"></i>
+              {{idea.id}}
+            </div>
+            <div class="col col-75">
+              {{idea.industry}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

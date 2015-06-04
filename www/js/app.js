@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-  .state('app', {
+    .state('app', {
     url: "/app",
     abstract: true,
     templateUrl: "templates/menu.html",
@@ -40,40 +40,40 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
   .state('app.browse', {
-    url: "/browse",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/browse.html"
-      }
-    }
-  })
-    .state('app.playlists', {
-      url: "/playlists",
+      url: "/browse",
       views: {
         'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
+          templateUrl: "templates/browse.html"
         }
       }
     })
-  .state('app.profile', {
-    url: "/profiles/:id",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/profile.html",
-        controller: 'ProfileCtrl'
+    .state('app.ideas', {
+      url: "/ideas",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/ideas.html",
+          controller: 'IdeasCtrl'
+        }
       }
-    }
-  })
-  .state('app.single', {
-    url: "/playlists/:playlistId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
+    })
+    .state('app.profile', {
+      url: "/profiles/:id",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/profile.html",
+          controller: 'ProfileCtrl'
+        }
       }
-    }
-  });
+    })
+    .state('app.single', {
+      url: "/ideas/:id",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/idea.html",
+          controller: 'IdeaCtrl'
+        }
+      }
+    });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/ideas');
 });
