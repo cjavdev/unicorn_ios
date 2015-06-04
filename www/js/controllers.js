@@ -57,6 +57,11 @@ angular.module('starter.controllers', [])
 })
 .controller('MyIdeasCtrl', function($scope, $stateParams, $ionicModal, $timeout, Idea) {
   // Create the login modal that we will use later
+  $scope.ideas = [];
+  Idea.fetchMyIdeas().then(function (resp) {
+    $scope.ideas = resp.data;
+  });
+
   $ionicModal.fromTemplateUrl('templates/new_idea.html', {
     scope: $scope
   }).then(function(modal) {

@@ -9,8 +9,26 @@
     <h2 class="title">My Ideas</h2>
   </div>
   <ion-content class="has-subheader">
-    <div class="padding">
-      <h1>Idea</h1>
+    <div class="">
+      <div class="padding card" ng-repeat="idea in ideas">
+        <div class="row">
+          <div class="col col-10">
+            <img src="{{idea.image_url}}">
+            <i class="icon ion-lightbulb idea-bulb-sm"></i>
+          </div>
+          <div class="col col-80">
+            <p><strong>{{idea.short_description}}</strong></p>
+            <i class="icon ion-fireball"></i>
+            <span class="subtle">5 interested engineers</span>
+            <i class="icon ion-eye"></i>
+            <span class="subtle">{{idea.looking_for}}</span>
+
+          </div>
+          <div class="col col-10">
+            <button class="button button-clear button-small button-royal">Edit</button>
+          </div>
+        </div>
+      </div>
     </div>
   </ion-content>
 </ion-view>

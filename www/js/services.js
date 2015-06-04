@@ -27,6 +27,9 @@ angular.module('starter.services', [])
     return {
       create: function(attrs) {
         return $http.post(API_BASE + "/api/v1/ideas", attrs);
+      },
+      fetchMyIdeas: function () {
+        return $http.get(API_BASE + "/api/v1/ideas");
       }
     };
   });

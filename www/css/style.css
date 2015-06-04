@@ -21,10 +21,17 @@
   min-height: 30px;
 }
 
+.subtle {
+  font-size: 11px;
+  color: grey;
+}
+
 .icon {
   color: #8a008c;
 }
-
+.idea-bulb-sm {
+  font-size: 25px;
+}
 .idea-bulb {
   font-size: 55px;
 }
