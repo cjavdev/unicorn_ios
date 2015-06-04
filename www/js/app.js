@@ -4,7 +4,6 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-window.API_BASE = "http://localhost:3000";
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -12,10 +11,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      window.API_BASE = "http://unicornio.herokuapp.com";
+    } else {
+      window.API_BASE = "http://localhost:3000";
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+      StatusBar.style(1); //Light
+      // StatusBar.styleDefault();
     }
   });
 })
