@@ -1,6 +1,6 @@
 <ion-view>
   <ion-nav-title>
-    <img src="/img/logo.png" class="bar-logo">
+    <img ng-src="../img/logo.png" class="bar-logo">
   </ion-nav-title>
   <div class="bar bar-subheader">
     <h2 class="title">Ideas</h2>
@@ -10,6 +10,7 @@
       <div class="row card padding item" ng-repeat="idea in ideas"
         ng-click="go('/app/profiles/3')">
         <div class="padding col col-50">
+
           <img class="idea-img" src="{{idea.image_url}}">
         </div>
         <div class="col col-50">
