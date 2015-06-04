@@ -41,7 +41,11 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('IdeasCtrl', function($scope) {
+.controller('IdeasCtrl', function($scope, $location) {
+  $scope.go = function (path) {
+    console.log(path);
+    $location.path(path);
+  };
   $scope.ideas = [
     { industry: "e-commerce", title: 'Boosted Board', id: 1, author: 'Tony Hawk', image_url: 'https://ksr-ugc.imgix.net/projects/78787/photo-original.jpg?v=1397771707&w=1536&h=1152&fit=crop&auto=format&q=92&s=87156d418e3f799b26ca21126f88e144' },
     { industry: "finance", title: 'Stakeboards', id: 2, author: 'Shaun White', image_url: 'http://cdn.phys.org/newman/gfx/news/hires/2013/1-reviewphanto.jpg' },

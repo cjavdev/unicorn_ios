@@ -7,7 +7,8 @@
   </div>
   <ion-content class="has-subheader grey-region">
     <div class="padding">
-      <div class="row card padding" ng-repeat="idea in ideas" href="#/app/ideas/{{idea.id}}">
+      <div class="row card padding item" ng-repeat="idea in ideas"
+        ng-click="go('/app/profiles/3')">
         <div class="padding col col-50">
           <img class="idea-img" src="{{idea.image_url}}">
         </div>
